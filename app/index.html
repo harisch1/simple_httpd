@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Counter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .counter {
+            text-align: center;
+        }
+
+        .counter button {
+            font-size: 1.5rem;
+            padding: 10px 20px;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="counter">
+        <h1>Counter: <span id="count">0</span></h1>
+        <button onclick="decrement()">-</button>
+        <button onclick="increment()">+</button>
+    </div>
+
+    <script>
+        let count = 0;
+
+        function increment() {
+            count++;
+            document.getElementById('count').innerText = count;
+        }
+
+        function decrement() {
+            count--;
+            document.getElementById('count').innerText = count;
+        }
+    </script>
+</body>
+
+</html>
