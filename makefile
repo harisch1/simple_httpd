@@ -35,4 +35,11 @@ debug: all
 
 # Run the project
 run: all
-	./$(TARGET) 8069
+	./$(TARGET) 3000
+
+check:
+	./$(TARGET) 3000 & sleep 1; curl -I http://localhost:8069/; killall $(TARGET)
+
+# Run the project with valgrind and kill valgrdind after the project is done
+valgrind: all
+	valgrind --leak-check=full ./$(TARGET) 8069 & sleep 1; curl -I http://localhost:8069/; killall valgrind
